@@ -2,7 +2,9 @@ package arquimago.listadecompras;
 
 public class Item {
     private String nome;
+    private int categoria;
     private boolean comprar;
+    private int id;
 
     public void setNome(String nome){
         this.nome = nome;
@@ -13,6 +15,10 @@ public class Item {
 
     }
 
+    public void setCategoria(int categoria){
+        this.categoria=categoria;
+    }
+
     public String getNome(){
         return this.nome;
     }
@@ -21,6 +27,16 @@ public class Item {
         return this.comprar;
     }
 
+    public int getCategoria() {
+        return this.categoria;
+    }
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
 
 
 }

@@ -17,12 +17,13 @@ public class BDCore extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-        
+    public void onCreate(SQLiteDatabase bd) {
+        bd.execSQL("CREATE TABLE itens(_id integer primary key autoincrement, nome text not null, categoria integer not null DEFAULT 0, comprar integer NULL DEFAULT 0))");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+    public void onUpgrade(SQLiteDatabase bd, int oldVersion, int newVersion) {
+        bd.execSQL("drop table itens");
+        onCreate(bd);
     }
 }
