@@ -53,11 +53,10 @@ public class BD {
 
             do{
                 Item i = new Item();
-                int comprar = cursor.getInt(3);
                 i.setId(cursor.getInt(0));
                 i.setNome(cursor.getString(1));
                 i.setCategoria(cursor.getInt(2));
-                i.setComprar((comprar==1)?true:false);
+                i.setComprar(cursor.getInt(3) == 1);
                 lista.add(i);
 
             }while(cursor.moveToNext());
