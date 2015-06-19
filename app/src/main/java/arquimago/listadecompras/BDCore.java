@@ -19,7 +19,7 @@ public class BDCore extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase bd) {
-        bd.execSQL("CREATE TABLE itens(_id integer primary key autoincrement, nome text not null, categoria integer not null DEFAULT 0, comprar integer NULL DEFAULT 0))");
+        bd.execSQL("CREATE TABLE itens(_id integer primary key autoincrement, nome text not null, categoria integer not null DEFAULT 0, comprar integer NULL DEFAULT 0)");
         popular(bd);
     }
 
