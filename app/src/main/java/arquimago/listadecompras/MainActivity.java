@@ -73,14 +73,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             switch (position){
-                case 0: return new Principal();
-                case 1: return new Principal();
-                case 2: return new Principal();
-                case 3: return new Principal();
-                case 4: return new Principal();
-                case 5: return new Principal();
-                case 6: return new Principal();
-                case 7: return new Principal();
+                case 0: return new Principal(0);
+                case 1: return new Principal(1);
+                case 2: return new Principal(2);
+                case 3: return new Principal(3);
+                case 4: return new Principal(4);
+                case 5: return new Principal(5);
+                case 6: return new Principal(6);
+                case 7: return new Principal(7);
             }
             return null;
         }

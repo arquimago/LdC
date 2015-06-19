@@ -65,4 +65,8 @@ public class BD {
         return lista;
     }
 
+    public void fechar(){
+        bd.close();
+    }
+
 }
