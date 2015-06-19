@@ -59,10 +59,12 @@ public class ItemAdapter extends BaseAdapter {
         final CheckBox checkBox = (CheckBox) layout.findViewById(R.id.comprar);
         checkBox.setChecked(item.isComprar());
 
+        BD bd = new BD(this);
+
         checkBox.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 item.setComprar(checkBox.isChecked());
-                //Toast.makeText(contexto, !item.isComprar() ? "Falso" : "Verdadeiro", Toast.LENGTH_SHORT).show();
+                bd.atualizar(item);
             }
         });
 
