@@ -59,7 +59,7 @@ public class ItemAdapter extends BaseAdapter {
         final CheckBox checkBox = (CheckBox) layout.findViewById(R.id.comprar);
         checkBox.setChecked(item.isComprar());
 
-        BD bd = new BD(this);
+        final BD bd = new BD(this.contexto);
 
         checkBox.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

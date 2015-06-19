@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         ///vamos simular uma paginação fixa, mas pode ser dinamica
-        private String[] abas = new String[]{"Café da Manhã", "Para Limpar", "Para Cozinhar"};
+        private String[] abas = new String[]{"Temperos", "Cozinha", "Café da Manhã", "Diversos", "Feira", "Limpeza", "Higiene", "Bebidas"};
 
         public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
