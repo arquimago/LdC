@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int categoria) {
-            return Principal.newInstance(categoria+1);
+            return Aba.newInstance(categoria + 1);
         }
 
         @Override
