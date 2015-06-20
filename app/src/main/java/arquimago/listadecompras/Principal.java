@@ -28,9 +28,12 @@ public class Principal extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         RelativeLayout root = (RelativeLayout) inflater.inflate(R.layout.activity_principal, container, false);
 
-        ArrayList<Item> lista = new ArrayList<Item>();
 
-        for(int i=0;i<30;i++){
+        BD bd = new BD(getActivity());
+        ArrayList<Item> lista = (ArrayList<Item>) bd.buscarCategoria(categoria);
+        bd.fechar();
+
+        /*for(int i=0;i<30;i++){
             Item novo = new Item();
             novo.setNome("item "+ categoria + " " +(i+1));
             if(i%2==0){
@@ -40,7 +43,7 @@ public class Principal extends Fragment {
             }
 
             lista.add(novo);
-        }
+        }*/
 
         ListView lv = (ListView) root.findViewById(R.id.lv);
         lv.setAdapter(new ItemAdapter(getActivity(),lista));

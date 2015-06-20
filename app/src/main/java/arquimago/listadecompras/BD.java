@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -57,6 +58,29 @@ public class BD {
                 i.setNome(cursor.getString(1));
                 i.setCategoria(cursor.getInt(2));
                 i.setComprar(cursor.getInt(3) == 1);
+                lista.add(i);
+
+            }while(cursor.moveToNext());
+        }
+
+        return lista;
+    }
+
+    public List<Item> buscarCategoria(int categoria){
+        List<Item> lista = new ArrayList<Item>();
+        String[] colunas = new String[]{"_id","nome","categoria","comprar"};
+
+        Cursor cursor = bd.query("itens", colunas, "categoria =" +categoria, null, null, null,"nome ASC");
+
+        if(cursor.getCount()>0){
+            cursor.moveToFirst();
+
+            do{
+                Item i = new Item();
+                i.setId(cursor.getInt(0));
+                i.setNome(cursor.getString(1));
+                i.setCategoria(cursor.getInt(2));
+                i.setComprar(cursor.getInt(3) != 1);
                 lista.add(i);
 
             }while(cursor.moveToNext());
