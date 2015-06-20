@@ -30,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 return 0xffffffff;
             }
         });
-        //A linha abaixo serve pra distribuir igualmente as abas
-        //mTabs.setDistributeEvenly(true);
+
         mTabs.setViewPager(mPager);
     }
 
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        ///vamos simular uma paginação fixa, mas pode ser dinamica
+        ///vamos numa paginação fixa, mas pode ser dinamica
         private String[] abas = new String[]{"Temperos", "Cozinha", "Café da Manhã", "Diversos", "Feira", "Limpeza", "Higiene", "Bebidas"};
 
         public ScreenSlidePagerAdapter(FragmentManager fm) {
@@ -71,18 +70,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public Fragment getItem(int position) {
-            switch (position){
-                case 0: return new Principal(1);
-                case 1: return new Principal(2);
-                case 2: return new Principal(3);
-                case 3: return new Principal(4);
-                case 4: return new Principal(5);
-                case 5: return new Principal(6);
-                case 6: return new Principal(7);
-                case 7: return new Principal(8);
-            }
-            return null;
+        public Fragment getItem(int categoria) {
+            return Principal.newInstance(categoria+1);
         }
 
         @Override

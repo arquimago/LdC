@@ -17,37 +17,44 @@ import java.util.ArrayList;
 
 public class Principal extends Fragment {
 
+    static final String CATEGORIA = "categoria";
     int categoria;
 
-    public Principal(int categoria){
-        super();
-        this.categoria=categoria;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            categoria = savedInstanceState.getInt(CATEGORIA);
+        } else {
+            categoria = getArguments().getInt(CATEGORIA);
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt(CATEGORIA, categoria);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         RelativeLayout root = (RelativeLayout) inflater.inflate(R.layout.activity_principal, container, false);
 
-
         BD bd = new BD(getActivity());
         ArrayList<Item> lista = (ArrayList<Item>) bd.buscarCategoria(categoria);
         bd.fechar();
 
-        /*for(int i=0;i<30;i++){
-            Item novo = new Item();
-            novo.setNome("item "+ categoria + " " +(i+1));
-            if(i%2==0){
-                novo.setComprar(Boolean.TRUE);
-            } else {
-                novo.setComprar(Boolean.FALSE);
-            }
-
-            lista.add(novo);
-        }*/
-
         ListView lv = (ListView) root.findViewById(R.id.lv);
         lv.setAdapter(new ItemAdapter(getActivity(),lista));
         return root;
+    }
+
+    public static Fragment newInstance(int categoria) {
+        Principal p = new Principal();
+        Bundle b = new Bundle();
+        b.putInt(CATEGORIA,categoria);
+        p.setArguments(b);
+        return p;
     }
 
 }
