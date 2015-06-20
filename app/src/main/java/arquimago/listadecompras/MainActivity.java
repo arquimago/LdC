@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
         mPager.setAdapter(mPagerAdapter);
 
         mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
-        mTabs.setBackgroundColor(0xC0C0C0);
+        mTabs.setBackgroundColor(0xc0c0c0);
         mTabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             public int getIndicatorColor(int position) {
-                return 0xffffffff;
+                return 0xffffff;
             }
         });
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         ///vamos numa paginação fixa, mas pode ser dinamica
-        private String[] abas = new String[]{"Temperos", "Cozinha", "Café da Manhã", "Diversos", "Feira", "Limpeza", "Higiene", "Bebidas"};
+        private String[] abas = new String[]{"Temperos", "Cozinhar", "Café da Manhã", "Diversos", "Feira", "Limpeza", "Higiene", "Bebidas"};
 
         public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
