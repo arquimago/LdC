@@ -84,7 +84,7 @@ public class BDCore extends SQLiteOpenHelper {
         item.setNome("Presunto"); item.setCategoria(3); inserir(item, bd);
         item.setNome("Filtro de Café"); item.setCategoria(4); inserir(item, bd);
         item.setNome("Guardanapos"); item.setCategoria(4); inserir(item, bd);
-        item.setNome("Papel-Toalha"); item.setCategoria(4); inserir(item, bd);
+        item.setNome("Papel Toalha"); item.setCategoria(4); inserir(item, bd);
         item.setNome("Pano de Prato"); item.setCategoria(4); inserir(item, bd);
         item.setNome("Filme de PVC"); item.setCategoria(4); inserir(item, bd);
         item.setNome("Papel Alumínio"); item.setCategoria(4); inserir(item, bd);

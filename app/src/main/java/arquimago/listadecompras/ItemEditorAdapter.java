@@ -40,7 +40,7 @@ public class ItemEditorAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int posicao, View convertView, ViewGroup parent){
+    public View getView(final int posicao, View convertView, ViewGroup parent){
         final Item item = lista.get(posicao);
         final View layout;
 
@@ -55,7 +55,25 @@ public class ItemEditorAdapter extends BaseAdapter {
         nome.setText(item.getNome());
 
         Button editar = (Button) layout.findViewById(R.id.edit);
+        editar.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+
+            }
+        });
+
+
         Button deletar = (Button) layout.findViewById(R.id.del);
+        deletar.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                BD bd = new BD(contexto);
+                bd.apagar(lista.get(posicao));
+                bd.fechar();
+
+                layout.setVisibility(View.GONE);
+            }
+        });
 
 
 
