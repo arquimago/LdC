@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Item da Lista"
+        android:id="@+id/nome"
+        android:layout_weight="0.60"
+        android:layout_gravity="left" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="edit"
+        android:id="@+id/edit"
+        android:layout_weight="0.20"
+        android:gravity="right|end"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="del"
+        android:id="@+id/del"
+        android:layout_weight="0.20"
+        android:gravity="right|end"/>
+
+</LinearLayout>

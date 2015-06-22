@@ -4,7 +4,7 @@ public class Item {
     private String nome;
     private int categoria;
     private boolean comprar;
-    private int id;
+    private long id;
 
     public void setNome(String nome){
         this.nome = nome;
@@ -31,11 +31,11 @@ public class Item {
         return this.categoria;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

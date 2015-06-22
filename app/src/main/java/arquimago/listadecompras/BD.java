@@ -26,7 +26,8 @@ public class BD {
         valores.put("categoria", item.getCategoria());
         valores.put("comprar", item.isComprar()?0:1);
 
-        bd.insert("itens",null,valores);
+        long id = bd.insert("itens",null,valores);
+        item.setId(id);
     }
 
 
